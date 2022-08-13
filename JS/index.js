@@ -4,46 +4,86 @@ window.addEventListener("DOMContentLoaded", () => {
   let faBars = document.querySelector(".fa-bars-staggered");
   let header = document.querySelector(".header");
   let images = document.querySelectorAll(".section__box_small img");
-  let timesSecret = document.querySelector(".section__secret_img_hover i");
   let secretPicture = document.querySelector(".section__secret_img");
   let secretPictureImg = document.querySelector(
     ".section__secret_img_hover img"
   );
+  let section__secret_img_hover = document.querySelector(
+    ".section__secret_img_hover"
+  );
   let body = document.querySelector("body");
   let newContainerNavbar = document.querySelector(".new__navbar_container");
+  let newNavbarLinks = newContainerNavbar.querySelectorAll(".nav__new_navbar_link");
 
+  // Sroll
   window.addEventListener("scroll", () => {
     header.classList.toggle("header__scroll", window.scrollY > 0);
   });
 
-  faBars.addEventListener("click", () => {
+  // Open Navbar Function
+  function openNavbarFunction() {
     newNavbar.classList.add("active");
-    body.style.overflow = "hidden";
     newContainerNavbar.classList.add("active");
-  });
+    body.style.overflow = "hidden";
+  }
 
-  times.addEventListener("click", () => {
+  // Close Navbar Function
+  function closeNavbarFunction() {
     newNavbar.classList.remove("active");
     body.style.overflow = "";
     newContainerNavbar.classList.remove("active");
+  }
+
+  // Close Picture Function
+  function closePicture() {
+    secretPicture.classList.remove("active");
+    body.style.overflow = "";
+  }
+
+  // Bars
+  faBars.addEventListener("click", () => {
+    openNavbarFunction();
   });
 
+  // Times
+  times.addEventListener("click", () => {
+    closeNavbarFunction();
+  });
+
+  // Images
   images.forEach((element) => {
     element.addEventListener("click", () => {
-      secretPicture.style.transform = "scale(1.0)";
+      secretPicture.classList.add("active");
+      body.style.overflow = "hidden";
       secretPictureImg.src = element.getAttribute("src");
     });
   });
 
-  timesSecret.addEventListener("click", () => {
-    secretPicture.style.transform = "scale(0)";
-  });
-
+  // New Navbar Container
   newContainerNavbar.addEventListener("click", (event) => {
     if (event.target == newContainerNavbar) {
-      newNavbar.classList.remove("active");
-      body.style.overflow = "";
-      newContainerNavbar.classList.remove("active");
+      closeNavbarFunction();
+    }
+  });
+
+  // Secret Img
+  section__secret_img_hover.addEventListener("click", (event) => {
+    if (event.target == section__secret_img_hover) {
+      closePicture();
+    }
+  });
+
+  // New Navbar Links
+  newNavbarLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeNavbarFunction();
+    });
+  });
+
+  this.addEventListener("keydown",(e)=> {
+    if(e.code == "Escape"){
+      closeNavbarFunction();
+      closePicture();
     }
   });
 });

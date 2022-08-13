@@ -174,8 +174,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: scale(0);
+  display: none;
   transition: all .5s ease;
+}
+
+.section__secret_img.active {
+  display: block;
 }
 
 .section__secret_img_hover {
@@ -187,7 +191,7 @@ body {
 }
 
 .section__secret_img_hover i {
-  color: white;
+  color: var(--youtube-color);
   animation: slider infinite 3s ease;
 }
 
@@ -208,7 +212,7 @@ body {
 
 /* ****FOOTER START**** */
 .footer {
-  background-color: black;
+  background-color: var(--text-color);
   height: 400px;
 }
 
@@ -224,11 +228,11 @@ body {
 .footer__box_paragraph {
   font-family: "Arial", sans-serif;
   line-height: 25px;
-  color: white;
+  color: var(--youtube-color);
 }
 
 .footer__box_paragraph_border {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--text-color);
 }
 
 /* ****FOOTER END**** */
@@ -272,7 +276,7 @@ body {
     position: relative;
     top: -220px;
     left: 500px;
-    color: white;
+    color: var(--youtube-color);
     animation: slider infinite 3s ease;
   }
 
@@ -317,7 +321,7 @@ body {
     position: relative;
     top: -205px;
     left: 350px;
-    color: white;
+    color: var(--youtube-color);
     animation: slider infinite 3s ease;
   }
 
@@ -325,10 +329,10 @@ body {
     position: fixed;
     height: 100%;
     width: 300px !important;
-    background-color: white;
+    background-color: var(--youtube-color);
     top: 0px;
     z-index: 10000;
-    box-shadow: 0 0 0 white;
+    box-shadow: 0 0 0 var(--youtube-color);
     transform: translateX(-675px);
     transition: all .5s ease;
   }
@@ -418,10 +422,10 @@ body {
     position: fixed;
     height: 100%;
     width: 200px !important;
-    background-color: white;
+    background-color: var(--youtube-color);
     top: 0px;
     z-index: 10000;
-    box-shadow: 0 0 0 white;
+    box-shadow: 0 0 0 var(--youtube-color);
     transform: translateX(-675px);
     transition: all .5s ease;
   }
@@ -452,10 +456,10 @@ body {
   min-height: 100vh;
   z-index: 3;
   width: 375px;
-  background-color: white;
+  background-color: var(--youtube-color);
   top: 0px;
   z-index: 10000;
-  box-shadow: 0 0 0 white;
+  box-shadow: 0 0 0 var(--youtube-color);
   transform: translateX(-675px);
   transition: all .5s linear;
 }
@@ -486,7 +490,7 @@ body {
 }
 
 .nav__new_navbar_link {
-  color: black;
+  color: var(--text-color);
   font-size: 25px;
 }
 
