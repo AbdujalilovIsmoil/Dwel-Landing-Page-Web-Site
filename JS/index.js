@@ -13,7 +13,9 @@ window.addEventListener("DOMContentLoaded", () => {
   );
   let body = document.querySelector("body");
   let newContainerNavbar = document.querySelector(".new__navbar_container");
-  let newNavbarLinks = newContainerNavbar.querySelectorAll(".nav__new_navbar_link");
+  let newNavbarLinks = newContainerNavbar.querySelectorAll(
+    ".nav__new_navbar_link"
+  );
 
   // Sroll
   window.addEventListener("scroll", () => {
@@ -80,8 +82,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  this.addEventListener("keydown",(e)=> {
-    if(e.code == "Escape"){
+  this.addEventListener("keydown", (e) => {
+    if (e.code == "Escape") {
       closeNavbarFunction();
       closePicture();
     }
