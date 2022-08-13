@@ -8,6 +8,15 @@
   text-decoration: none;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -149,12 +158,10 @@ body {
   height: 427px;
   width: 100%;
   transition: all 0.4s linear;
-  overflow: hidden;
 }
 
 .section__box_small_img:hover {
   transform: scale(1.1);
-  height: 427px;
   cursor: pointer;
 }
 
