@@ -602,6 +602,7 @@ body {
   background-color: transparent;
   z-index: 2;
   top: 0;
+  visibility: hidden;
 }
 
 .new__navbar_container.active {
