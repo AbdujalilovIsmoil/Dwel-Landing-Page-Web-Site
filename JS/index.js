@@ -26,13 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
   function openNavbarFunction() {
     newNavbar.classList.add("active");
     newContainerNavbar.classList.add("active");
-    body.style.overflow = "hidden";
   }
 
   // Close Navbar Function
   function closeNavbarFunction() {
     newNavbar.classList.remove("active");
-    body.style.overflow = "";
     newContainerNavbar.classList.remove("active");
   }
 

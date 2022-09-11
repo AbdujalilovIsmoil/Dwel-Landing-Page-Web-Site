@@ -19,6 +19,13 @@
 * Browsers: last 4 version
 */
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* ****THE BASIC TO THE CODES START**** */
 *,
 *::after,
@@ -326,7 +333,11 @@ body {
 }
 
 /* ****FOOTER END**** */
-
+@media (max-width: 5000px) {
+  .new__navbar_container {
+    display: none;
+  }
+}
 
 /* ****RESPONSIVE START**** */
 @media only screen and (max-width: 1000px) and (min-width: 756px) {
@@ -389,6 +400,10 @@ body {
     object-fit: cover;
   }
 
+  .new__navbar_container {
+    display: block;
+  }
+
   .section__box {
     display: -ms-grid;
     display: grid;
@@ -418,6 +433,10 @@ body {
 }
 
 @media only screen and (max-width: 576px) and (min-width: 360px) {
+  .new__navbar_container {
+    display: block;
+  }
+
   .section__secret_img img {
     -webkit-transition: 0.6s ease;
     -o-transition: 0.6s ease;
@@ -497,6 +516,10 @@ body {
 }
 
 @media only screen and (max-width: 360px) and (min-width: 280px) {
+  .new__navbar_container {
+    display: block;
+  }
+
   .section__secret_img img {
     -webkit-transition: 0.6s ease;
     -o-transition: 0.6s ease;
@@ -573,13 +596,12 @@ body {
 /* ****NAVBAR START**** */
 
 .new__navbar_container {
-  width: 1140px;
+  width: 100%;
   min-height: 100vh;
   position: fixed;
   background-color: transparent;
   z-index: 2;
   top: 0;
-  visibility: hidden;
 }
 
 .new__navbar_container.active {
